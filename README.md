@@ -2,6 +2,7 @@
 
 This project is a React application built with Vite that utilizes machine learning to classify brain tumor X-ray images into two categories: tumor present and tumor absent. 
 
+![Brain Tumor X-Ray Classification App](./images/screenshot.png)
 
 ## Features
 
@@ -20,12 +21,12 @@ Before running the application, ensure you have the following installed:
 
 1. **Clone the Repository**: 
     ```bash
-    git clone https://github.com/your-username/brain-tumor-xray-app.git
+    git clone https://github.com/your-username/react-brain-tumor-xray-classification-app.git
     ```
 
 2. **Navigate to the Project Directory**:
     ```bash
-    cd brain-tumor-xray-app
+    cd react-brain-tumor-xray-classification-app
     ```
 
 3. **Install Dependencies**:
