@@ -6,6 +6,7 @@ import { Loader } from '../loader/Loader';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import model from '../../../models/model.json'
 
 export const Home = () => {
   const inputRef = useRef(null);
@@ -38,7 +39,7 @@ export const Home = () => {
     if (selectedImage) {
       setLoading(true);
 
-      const modelURL = "../../../models/"; 
+      const modelURL = model; 
       const classifier = await ml5.imageClassifier(modelURL);
       const image = document.createElement('img');
       image.src = URL.createObjectURL(selectedImage);
