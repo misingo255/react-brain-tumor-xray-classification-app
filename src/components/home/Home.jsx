@@ -6,7 +6,7 @@ import { Loader } from '../loader/Loader';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import model from '../../../models/model.json'
+import model from './models/model.json'
 
 export const Home = () => {
   const inputRef = useRef(null);
@@ -35,12 +35,16 @@ export const Home = () => {
     }
   };
 
+    // When the model is loaded
+const modelLoaded = () => {
+  console.log('Local Model Loaded!');
+};
+
   const handleDetection = async () => {
     if (selectedImage) {
       setLoading(true);
 
-      const modelURL = model; 
-      const classifier = await ml5.imageClassifier(modelURL);
+      const classifier = await ml5.imageClassifier("model.json", modelLoaded);
       const image = document.createElement('img');
       image.src = URL.createObjectURL(selectedImage);
       image.onload = async () => {
